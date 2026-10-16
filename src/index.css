@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Sinhala", ui-sans-serif, system-ui, sans-serif;
+  --color-pw-bg: #090c10;
+  --color-pw-elevated: #10161d;
+  --color-pw-card: #151c25;
+  --color-pw-border: #273445;
+  --color-pw-muted: #9aa8b8;
+  --color-pw-text: #f4f7fb;
+  --color-pw-cyan: #2ec8ff;
+  --color-pw-blue: #1aa7ff;
+  --color-pw-green: #3ee07a;
+  --color-pw-green-dim: #1f8f4d;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--color-pw-bg);
+  color: var(--color-pw-text);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-pw-green) 35%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-pw-cyan);
+  outline-offset: 3px;
+}
+
+.pw-grid {
+  background-image:
+    linear-gradient(rgba(46, 200, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(62, 224, 122, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.pw-hero-glow {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(26, 167, 255, 0.16), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(62, 224, 122, 0.1), transparent 55%),
+    radial-gradient(ellipse 40% 30% at 15% 70%, rgba(26, 167, 255, 0.08), transparent 50%);
+}
+
+.pw-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 40%),
+    var(--color-pw-card);
+  border: 1px solid var(--color-pw-border);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.pw-hairline {
+  background: linear-gradient(90deg, transparent, #2ec8ff, #3ee07a, transparent);
+  height: 1px;
+  border: 0;
+}
